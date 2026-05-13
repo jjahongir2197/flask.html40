@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Database</title>
+</head>
+<body>
+
+    <h1>Student Database</h1>
+
+    <form method="POST">
+
+        <input type="text"
+        name="name"
+        placeholder="Student name">
+
+        <br><br>
+
+        <input type="number"
+        name="age"
+        placeholder="Age">
+
+        <br><br>
+
+        <input type="text"
+        name="major"
+        placeholder="Major">
+
+        <br><br>
+
+        <button type="submit">
+            Save
+        </button>
+
+    </form>
+
+    <hr>
+
+    {% for student in students %}
+
+        <h2>{{ student.name }}</h2>
+
+        <p>Age: {{ student.age }}</p>
+
+        <p>Major: {{ student.major }}</p>
+
+        <a href="/delete/{{ student.id }}">
+            Delete
+        </a>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>
